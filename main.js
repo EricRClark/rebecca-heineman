@@ -77,6 +77,7 @@ var sudsTrackerApp = {
         center: {lat: coordsObj.latitude, lng: coordsObj.longitude},
         zoom: 12
       });
+      
   },
 
   useGeolocation: function () {
@@ -84,6 +85,9 @@ var sudsTrackerApp = {
   },
 
   getBreweryData: function(posObj, distance) {
+    if (!distance) {
+      distance = 10;
+    }
     console.log('this is the object containing lat and lng: ', posObj);
     var urlRight = sudsTrackerApp.buildTrackerURL(posObj.coords);
     var urlObj = { url: sudsTrackerApp.buildTrackerURL(posObj.coords) };
