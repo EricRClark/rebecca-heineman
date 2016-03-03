@@ -87,14 +87,6 @@ var sudsTrackerApp = {
     });
   },
 
-
-  initMap: function (coordsObj) {
-    var  map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: coordsObj.latitude, lng: coordsObj.longitude},
-        zoom: 12
-      });
-},
-
   useGeolocation: function () {
     navigator.geolocation.getCurrentPosition(sudsTrackerApp.getBreweryData);
   },
